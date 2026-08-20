@@ -1,0 +1,52 @@
+// Processed with MiDeobf Engine v2.1.2rc (14/08/26)
+// discord.gg/wyvern
+// https://wyvern.im
+
+// Type: Rexon_Menu.Core.Modules.Rig.LessInsaneAutoRun
+// Assembly: Rexon_Menu, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+
+using Rexon_Menu.Core.Attributes;
+using UnityEngine;
+
+namespace Rexon_Menu.Core.Modules.Rig;
+
+[Mod("Less Insane Auto Run [RIGHT GRIP]", "Rig", "Slower automatic running forward.", false, 11, ModType.Toggle, false)]
+internal sealed class LessInsaneAutoRun : MonoBehaviour
+{
+	private void Update()
+	{
+		if (!ControllerInputPoller.instance.rightGrab)
+		{
+			return;
+		}
+
+		Transform head = GorillaTagger.Instance.headCollider.transform;
+		Vector3 forward = head.forward.normalized;
+		Vector3 right = head.right.normalized;
+		float phase = Time.time * 20f;
+
+		Vector3 rightSwing = -forward * Mathf.Cos(phase) * 0.7f
+			+ Vector3.up * (Mathf.Sin(phase) * 0.5f);
+		Vector3 leftSwing = forward * Mathf.Cos(phase) * 0.7f
+			- Vector3.up * (Mathf.Sin(phase) * 0.5f);
+		Vector3 rightBase = forward * 0.35f + right * 0.1f + Vector3.down * 0.5f;
+		Vector3 leftBase = forward * 0.35f - right * 0.1f + Vector3.down * 0.5f;
+
+		GorillaTagger.Instance.rightHandTransform.position = head.position + rightBase + rightSwing;
+		GorillaTagger.Instance.leftHandTransform.position = head.position + leftBase + leftSwing;
+		GorillaTagger.Instance.rightHandTransform.rotation = Quaternion.LookRotation(forward);
+		GorillaTagger.Instance.leftHandTransform.rotation = Quaternion.LookRotation(forward);
+
+		Vector3 horizontalForward = new Vector3(forward.x, 0f, forward.z).normalized;
+		Transform body = GorillaTagger.Instance.bodyCollider.transform;
+		Vector3 currentPosition = body.position;
+		Vector3 targetPosition = currentPosition + horizontalForward * 0.05f;
+		int groundLayer = LayerMask.GetMask("Default");
+		if (Physics.Raycast(targetPosition + Vector3.up, Vector3.down, out RaycastHit groundHit, 2f, groundLayer))
+		{
+			targetPosition.y = groundHit.point.y + 1f;
+		}
+
+		body.position = Vector3.Lerp(currentPosition, targetPosition, 0.7f);
+	}
+}

@@ -1,0 +1,85 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Rexon_Menu</AssemblyName>
+    <RootNamespace />
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>net472</TargetFramework>
+    <Configurations>CompileOnly</Configurations>
+    <Platforms>x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>False</Prefer32Bit>
+    <GorillaTagRoot>C:\Program Files (x86)\Steam\steamapps\common\Gorilla Tag</GorillaTagRoot>
+    <GorillaManaged>$(GorillaTagRoot)\Gorilla Tag_Data\Managed</GorillaManaged>
+    <GorillaBepInEx>$(GorillaTagRoot)\BepInEx\core</GorillaBepInEx>
+    <PublicizedReferences>$(MSBuildProjectDirectory)\references\compile-only-publicized</PublicizedReferences>
+    <OutputPath>artifacts\compile-only\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>False</AppendTargetFrameworkToOutputPath>
+    <CopyLocalLockFileAssemblies>False</CopyLocalLockFileAssemblies>
+    <Deterministic>True</Deterministic>
+    <Optimize>True</Optimize>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Rexon_Menu_Mat\Rexon_Menu_Mat.csproj">
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Rexon_Shader\Rexon_Shader.csproj">
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\Rexon_Menu.Resources.imgui" />
+    <None Remove="Resources\Rexon_Menu.Resources.imguipc" />
+    <None Remove="Resources\Rexon_Menu.Resources.earape.mp3" />
+    <EmbeddedResource Include="Resources\Rexon_Menu.Resources.imgui" LogicalName="Rexon_Menu.Resources.imgui" />
+    <EmbeddedResource Include="Resources\Rexon_Menu.Resources.imguipc" LogicalName="Rexon_Menu.Resources.imguipc" />
+    <EmbeddedResource Include="Resources\Rexon_Menu.Resources.earape.mp3" LogicalName="Rexon_Menu.Resources.earape.mp3" />
+    <EmbeddedResource Include="..\Rexon_Menu_Mat\artifacts\compile-only\Rexon-Menu-Mat.dll" LogicalName="Rexon_Menu.Resources.dependencies.Rexon-Menu-Mat.dll" />
+    <EmbeddedResource Include="..\Rexon_Shader\artifacts\compile-only\Rexon-Shader.dll" LogicalName="Rexon_Menu.Resources.dependencies.Rexon-Shader.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(GorillaManaged)\UnityEngine.CoreModule.dll</HintPath></Reference>
+    <Reference Include="Assembly-CSharp"><HintPath>$(PublicizedReferences)\Assembly-CSharp.dll</HintPath></Reference>
+    <Reference Include="PhotonRealtime"><HintPath>$(GorillaManaged)\PhotonRealtime.dll</HintPath></Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe"><HintPath>$(GorillaManaged)\System.Runtime.CompilerServices.Unsafe.dll</HintPath></Reference>
+    <Reference Include="netstandard"><HintPath>$(GorillaManaged)\netstandard.dll</HintPath></Reference>
+    <Reference Include="Fusion.Runtime"><HintPath>$(GorillaManaged)\Fusion.Runtime.dll</HintPath></Reference>
+    <Reference Include="Fusion.Common"><HintPath>$(GorillaManaged)\Fusion.Common.dll</HintPath></Reference>
+    <Reference Include="Fusion.Sockets"><HintPath>$(GorillaManaged)\Fusion.Sockets.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.UI"><HintPath>$(GorillaManaged)\UnityEngine.UI.dll</HintPath></Reference>
+    <Reference Include="Unity.TextMeshPro"><HintPath>$(GorillaManaged)\Unity.TextMeshPro.dll</HintPath></Reference>
+    <Reference Include="Photon3Unity3D"><HintPath>$(PublicizedReferences)\Photon3Unity3D.dll</HintPath></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(GorillaManaged)\UnityEngine.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.InputLegacyModule"><HintPath>$(GorillaManaged)\UnityEngine.InputLegacyModule.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.PhysicsModule"><HintPath>$(GorillaManaged)\UnityEngine.PhysicsModule.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.TextRenderingModule"><HintPath>$(GorillaManaged)\UnityEngine.TextRenderingModule.dll</HintPath></Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="PhotonUnityNetworking"><HintPath>$(PublicizedReferences)\PhotonUnityNetworking.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.XRModule"><HintPath>$(GorillaManaged)\UnityEngine.XRModule.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.AudioModule"><HintPath>$(GorillaManaged)\UnityEngine.AudioModule.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule"><HintPath>$(GorillaManaged)\UnityEngine.UnityWebRequestModule.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule"><HintPath>$(GorillaManaged)\UnityEngine.ParticleSystemModule.dll</HintPath></Reference>
+    <Reference Include="PhotonVoice"><HintPath>$(GorillaManaged)\PhotonVoice.dll</HintPath></Reference>
+    <Reference Include="0Harmony"><HintPath>$(GorillaBepInEx)\0Harmony.dll</HintPath></Reference>
+    <Reference Include="Unity.Localization"><HintPath>$(GorillaManaged)\Unity.Localization.dll</HintPath></Reference>
+    <Reference Include="Unity.InputSystem"><HintPath>$(GorillaManaged)\Unity.InputSystem.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.VRModule"><HintPath>$(GorillaManaged)\UnityEngine.VRModule.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.AssetBundleModule"><HintPath>$(GorillaManaged)\UnityEngine.AssetBundleModule.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.UIModule"><HintPath>$(GorillaManaged)\UnityEngine.UIModule.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.IMGUIModule"><HintPath>$(GorillaManaged)\UnityEngine.IMGUIModule.dll</HintPath></Reference>
+    <Reference Include="BepInEx"><HintPath>$(GorillaBepInEx)\BepInEx.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule"><HintPath>$(GorillaManaged)\UnityEngine.UnityWebRequestAudioModule.dll</HintPath></Reference>
+    <Reference Include="Oculus.VR"><HintPath>$(GorillaManaged)\Oculus.VR.dll</HintPath></Reference>
+    <Reference Include="PhotonVoice.PUN"><HintPath>$(GorillaManaged)\PhotonVoice.PUN.dll</HintPath></Reference>
+    <Reference Include="PhotonVoice.API"><HintPath>$(GorillaManaged)\PhotonVoice.API.dll</HintPath></Reference>
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <Reference>
+      <Private>False</Private>
+    </Reference>
+  </ItemDefinitionGroup>
+</Project>

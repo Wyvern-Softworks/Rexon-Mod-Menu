@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Rexon-Shader</AssemblyName>
+    <RootNamespace>Rexon_Shader</RootNamespace>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>net472</TargetFramework>
+    <Configurations>CompileOnly</Configurations>
+    <Platforms>x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>False</Prefer32Bit>
+    <GorillaTagRoot>C:\Program Files (x86)\Steam\steamapps\common\Gorilla Tag</GorillaTagRoot>
+    <GorillaManaged>$(GorillaTagRoot)\Gorilla Tag_Data\Managed</GorillaManaged>
+    <GorillaBepInEx>$(GorillaTagRoot)\BepInEx\core</GorillaBepInEx>
+    <OutputPath>artifacts\compile-only\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>False</AppendTargetFrameworkToOutputPath>
+    <CopyLocalLockFileAssemblies>False</CopyLocalLockFileAssemblies>
+    <Deterministic>True</Deterministic>
+    <Optimize>True</Optimize>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony"><HintPath>$(GorillaBepInEx)\0Harmony.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(GorillaManaged)\UnityEngine.CoreModule.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="System.Core" />
+  </ItemGroup>
+</Project>

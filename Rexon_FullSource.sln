@@ -1,0 +1,26 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rexon_Menu", "Rexon_Menu\Rexon_Menu.csproj", "{CDBFCF46-566D-4ED3-890B-6AAE5D015136}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rexon_Menu_Mat", "Rexon_Menu_Mat\Rexon_Menu_Mat.csproj", "{913EACF7-8984-41A1-A651-C20F63268F9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rexon_Shader", "Rexon_Shader\Rexon_Shader.csproj", "{F12B3CD7-8507-4275-81CB-4E60FD69CC68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CompileOnly|x64 = CompileOnly|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDBFCF46-566D-4ED3-890B-6AAE5D015136}.CompileOnly|x64.ActiveCfg = CompileOnly|x64
+		{CDBFCF46-566D-4ED3-890B-6AAE5D015136}.CompileOnly|x64.Build.0 = CompileOnly|x64
+		{913EACF7-8984-41A1-A651-C20F63268F9E}.CompileOnly|x64.ActiveCfg = CompileOnly|x64
+		{913EACF7-8984-41A1-A651-C20F63268F9E}.CompileOnly|x64.Build.0 = CompileOnly|x64
+		{F12B3CD7-8507-4275-81CB-4E60FD69CC68}.CompileOnly|x64.ActiveCfg = CompileOnly|x64
+		{F12B3CD7-8507-4275-81CB-4E60FD69CC68}.CompileOnly|x64.Build.0 = CompileOnly|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

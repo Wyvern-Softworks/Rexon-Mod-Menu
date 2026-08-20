@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Rexon-Menu-Mat</AssemblyName>
+    <RootNamespace>Rexon_Menu_Mat</RootNamespace>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>net472</TargetFramework>
+    <Configurations>CompileOnly</Configurations>
+    <Platforms>x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>False</Prefer32Bit>
+    <GorillaTagRoot>C:\Program Files (x86)\Steam\steamapps\common\Gorilla Tag</GorillaTagRoot>
+    <GorillaManaged>$(GorillaTagRoot)\Gorilla Tag_Data\Managed</GorillaManaged>
+    <PublicizedReferences>$(MSBuildProjectDirectory)\..\Rexon_Menu\references\compile-only-publicized</PublicizedReferences>
+    <OutputPath>artifacts\compile-only\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>False</AppendTargetFrameworkToOutputPath>
+    <CopyLocalLockFileAssemblies>False</CopyLocalLockFileAssemblies>
+    <Deterministic>True</Deterministic>
+    <Optimize>True</Optimize>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp"><HintPath>$(PublicizedReferences)\Assembly-CSharp.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="PhotonRealtime"><HintPath>$(GorillaManaged)\PhotonRealtime.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="PhotonUnityNetworking"><HintPath>$(PublicizedReferences)\PhotonUnityNetworking.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(GorillaManaged)\UnityEngine.CoreModule.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="System.Core" />
+  </ItemGroup>
+</Project>
